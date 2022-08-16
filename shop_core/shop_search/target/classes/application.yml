@@ -1,0 +1,34 @@
+server:
+  port: 8203
+spring:
+  elasticsearch:
+    rest:
+      #uris: http://10.211.55.97:9200  http://192.168.198.88/
+      uris: http://112.74.162.185:9200
+  application:
+    name: shop-search
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 112.74.162.185:8848
+  rabbitmq:
+    host: 106.52.255.217
+    port: 5672
+    username: admin
+    password: 123
+    listener:
+      simple:
+        acknowledge-mode: manual
+  redis:
+    host: 106.52.255.217
+    port: 6389
+    database: 0
+    timeout: 1800000
+feign:
+  sentinel:
+    enabled: true
+  client:
+    config:
+      default:
+        readTimeout: 3000
+        connectTimeout: 1000
