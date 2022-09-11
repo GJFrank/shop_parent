@@ -40,7 +40,7 @@ public class OrderConsumer {
         //Todo Order还有后续事情
     }
 
-    //2.支付成功之后修改订单状态   --没做配置类, 直接使用注解
+    //2.支付成功之后修改订单状态   --  没做配置类, 直接使用注解
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(value = MqConst.PAY_ORDER_QUEUE, durable = "false"),
             exchange = @Exchange(value = MqConst.PAY_ORDER_EXCHANGE, durable = "false"),

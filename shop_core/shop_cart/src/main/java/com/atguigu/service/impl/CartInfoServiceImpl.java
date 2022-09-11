@@ -100,6 +100,7 @@ public class CartInfoServiceImpl extends ServiceImpl<CartInfoMapper, CartInfo> i
         return cartInfoList;
     }
 
+    // 更新选中状态
     @Override
     public void checkCart(String oneOfUserId, Long skuId, Integer isChecked) {
         //理论上需要先修改数据库,再修改redis.  这里使用先redis再mysql的顺序是为了学习

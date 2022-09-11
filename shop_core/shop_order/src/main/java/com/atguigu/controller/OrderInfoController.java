@@ -121,5 +121,11 @@ public class OrderInfoController {
     public String splitOrder(@RequestParam Long orderId, @RequestParam String wareHouseIdSkuIdMapJson) {
         return orderInfoService.splitOrder(orderId, wareHouseIdSkuIdMapJson);
     }
+
+    // 保存订单及详情
+    @PostMapping("/saveOrderAndDetail")
+    public Long saveOrderAndDetail(@RequestBody OrderInfo orderInfo) {
+        return orderInfoService.saveOrderAndDetail(orderInfo);
+    }
 }
 

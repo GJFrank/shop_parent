@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -36,5 +37,13 @@ public class WebSeckillController {
         SeckillProduct seckillProduct = seckillFeignClient.querySecKillProductById(skuId);
         model.addAttribute("item", seckillProduct);
         return "seckill/detail";
+    }
+
+    // 3. 获取抢购码成功之后的页面 seckill-queue.html?skuId=33&seckillCode=eccbc87e4b5ce2fe28308fd9f2a7baf3
+    @GetMapping("/seckill-queue.html")
+    public String seckillQueue(Long skuId, String seckillCode, HttpServletRequest request) {
+        request.setAttribute("skuId",skuId);
+        request.setAttribute("seckillCode",seckillCode);
+        return "seckill/queue";
     }
 }

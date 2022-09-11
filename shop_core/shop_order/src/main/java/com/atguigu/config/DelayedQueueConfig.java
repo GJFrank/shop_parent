@@ -41,7 +41,5 @@ public class DelayedQueueConfig {
     public Binding bindingDelayedQueue(@Qualifier("cancelOrderQueue") Queue cancelOrderQueue,
                                        @Qualifier("cancelOrderExchange") CustomExchange cancelOrderExchange) {
         return BindingBuilder.bind(cancelOrderQueue).to(cancelOrderExchange).with(MqConst.CANCEL_ORDER_ROUTE_KEY).noargs();
-
     }
-
 }

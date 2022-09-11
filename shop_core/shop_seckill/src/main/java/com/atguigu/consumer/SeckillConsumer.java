@@ -63,7 +63,7 @@ public class SeckillConsumer {
         }
     }
 
-    //2. 预下单之后才能判断用户是否具有抢购资格  消费秒杀预下单里面的消息
+    //2.  消费秒杀预下单里面的消息
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(value = MqConst.PREPARE_SECKILL_QUEUE, durable = "false"),
             exchange = @Exchange(value = MqConst.PREPARE_SECKILL_EXCHANGE, durable = "false"),

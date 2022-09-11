@@ -57,7 +57,7 @@ public class AccessFilter implements GlobalFilter {
         //未登录情况下获得临时userId
         String userTempId = getUserTempId(request);
         //登录成功之后可以获得userId
-        String userId = getUserId(request);
+        String                                   userId = getUserId(request);
 
         //内部接口, 不允许直接访问
         if (antPathMatcher.match("/sku/**", path)) {

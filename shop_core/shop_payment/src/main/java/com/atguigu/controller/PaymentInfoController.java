@@ -34,8 +34,8 @@ public class PaymentInfoController {
         return paymentInfoService.createQrCode(orderId);
     }
 
-    //异步通知 验签
-    // 2.支付成功之后 支付宝调用我们的地址 http://enjoy6288.free.idcfengye.com/payment/async/notify
+    //   异步通知 验签
+    //2. 支付成功之后 支付宝调用我们的地址 http://enjoy6288.free.idcfengye.com/payment/async/notify
     @PostMapping("async/notify")
     public String asyncNotify(@RequestParam Map<String, String> aliPayParam) throws AlipayApiException {
         System.out.println(aliPayParam);

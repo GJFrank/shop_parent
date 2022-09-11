@@ -1,8 +1,11 @@
 package com.atguigu.controller;
 
 
+import com.atguigu.client.OrderFeignClient;
 import com.atguigu.constant.MqConst;
 import com.atguigu.constant.RedisConst;
+import com.atguigu.entity.OrderInfo;
+import com.atguigu.entity.PrepareSeckillOrder;
 import com.atguigu.entity.SeckillProduct;
 import com.atguigu.entity.UserSeckillSkuInfo;
 import com.atguigu.result.RetVal;
@@ -40,6 +43,8 @@ public class SeckillProductController {
     private SeckillProductService seckillProductService;
     @Autowired
     private RabbitTemplate rabbitTemplate;
+    @Autowired
+    private OrderFeignClient orderFeignClient;
 
     //1. 秒杀商品列表显示
     @GetMapping("queryAllSecKillProduct")
@@ -65,7 +70,7 @@ public class SeckillProductController {
         if (!StringUtils.isEmpty(userId)) {
             //2. 从缓存中拿到秒杀商品信息
             SeckillProduct seckillProduct = seckillProductService.getSeckillProductById(skuId);
-            //3. 判断当前时间是否在秒杀范围内
+            //3. 判断当前时间是否在秒杀范围内  //亦可判断秒杀状态位
             Date currentDate = new Date();
             //前者<=后者 true
             if (DateUtil.dateCompare(seckillProduct.getStartTime(), currentDate) && DateUtil.dateCompare(currentDate, seckillProduct.getEndTime())) {
@@ -81,7 +86,7 @@ public class SeckillProductController {
     // 4. 秒杀预下单  seckill-queue.html?skuId=33&seckillCode=eccbc87e4b5ce2fe28308fd9f2a7baf3
     @PostMapping("/prepareSeckill/{skuId}")
     public RetVal prepareSeckill(@PathVariable Long skuId, String seckillCode, HttpServletRequest request) {
-        //a. 判断请购码是否正确
+        //a. 判断请购码是否正确  承接第三步, 需要获取抢购码
         String userId = AuthContextHolder.getUserId(request);
         if (!MD5.encrypt(userId).equals(seckillCode)) {
             // 抢购码不合法 报异常
@@ -107,5 +112,44 @@ public class SeckillProductController {
         }
         return RetVal.ok();
     }
+
+    //5. 判断是否具备抢购资格 http://api.gmall.com/seckill/hasQualified/24
+    @GetMapping("hasQualified/{skuId}")
+    public RetVal hasQualified(@PathVariable Long skuId, HttpServletRequest request) {
+        String userId = AuthContextHolder.getUserId(request);
+        return seckillProductService.hasQualified(userId, skuId);
+    }
+
+    //6. 返回秒杀页面需要的数据
+    @GetMapping("seckillConfirm")
+    public RetVal seckillConfirm(HttpServletRequest request) {
+        String userId = AuthContextHolder.getUserId(request);
+        return seckillProductService.seckillConfirm(userId);
+    }
+
+    //7. 提交秒杀订单信息
+    @PostMapping("submitSecKillOrder")
+    public RetVal submitSecKillOrder(@RequestBody OrderInfo orderInfo, HttpServletRequest request) {
+        String userId = AuthContextHolder.getUserId(request);
+        // 判断用户是否有预购单
+        PrepareSeckillOrder prepareSeckillOrder = (PrepareSeckillOrder) redisTemplate.boundHashOps(RedisConst.PREPARE_SECKILL_USERID_ORDER).get(userId);
+        if (prepareSeckillOrder == null) {
+            return RetVal.fail().message("非法请求");
+        }
+        // 通过远程调用order微服务进行下单
+        Long orderId = orderFeignClient.saveOrderAndDetail(orderInfo);
+        if (orderId == null) {
+            return RetVal.fail().message("下单失败!");
+        }
+
+        // 删除预购单信息
+        redisTemplate.boundHashOps(RedisConst.PREPARE_SECKILL_USERID_ORDER).delete(userId);
+        // 在redis中把用户购买的商品信息放里面,  用于判断该用户是否购买过商品
+        redisTemplate.boundHashOps(RedisConst.BOUGHT_SECKILL_USER_ORDER).put(userId, orderId);
+        return RetVal.ok(orderId);
+
+    }
+
+
 }
 
