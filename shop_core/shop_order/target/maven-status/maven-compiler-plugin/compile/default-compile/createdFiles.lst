@@ -1,0 +1,11 @@
+com\atguigu\mapper\OrderDetailMapper.class
+com\atguigu\mapper\OrderInfoMapper.class
+com\atguigu\service\impl\OrderInfoServiceImpl.class
+com\atguigu\config\DelayedQueueConfig.class
+com\atguigu\service\OrderInfoService.class
+com\atguigu\OrderApplication.class
+com\atguigu\controller\OrderInfoController.class
+com\atguigu\service\OrderDetailService.class
+com\atguigu\service\impl\OrderDetailServiceImpl.class
+com\atguigu\controller\OrderDetailController.class
+com\atguigu\consumer\OrderConsumer.class

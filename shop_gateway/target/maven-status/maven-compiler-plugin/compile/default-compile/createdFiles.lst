@@ -1,0 +1,4 @@
+com\atguigu\config\RedisConfig.class
+com\atguigu\GatewayApplication.class
+com\atguigu\config\CorsConfig.class
+com\atguigu\filter\AccessFilter.class

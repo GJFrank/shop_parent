@@ -1,0 +1,8 @@
+com\atguigu\controller\WebSeckillController.class
+com\atguigu\WebApplication.class
+com\atguigu\controller\WebLoginController.class
+com\atguigu\controller\WebOrderController.class
+com\atguigu\controller\WebPaymentController.class
+com\atguigu\controller\WebDetailController.class
+com\atguigu\controller\WebCartController.class
+com\atguigu\controller\WebIndexController.class

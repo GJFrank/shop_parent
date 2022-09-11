@@ -1,0 +1,10 @@
+com\atguigu\util\AuthContextHolder.class
+com\atguigu\util\IpUtil.class
+com\atguigu\exception\GmallException.class
+com\atguigu\result\RetValCodeEnum.class
+com\atguigu\result\RetVal.class
+com\atguigu\util\HttpClientUtil.class
+com\atguigu\exception\SleepUtils.class
+com\atguigu\executors\MyThreadPoolProperties.class
+com\atguigu\executors\MyThreadPoolConfig.class
+com\atguigu\util\MD5.class

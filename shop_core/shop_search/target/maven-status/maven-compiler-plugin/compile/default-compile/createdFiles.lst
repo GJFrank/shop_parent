@@ -1,0 +1,6 @@
+com\atguigu\service\SearchService.class
+com\atguigu\consumer\EsConsumer.class
+com\atguigu\service\impl\SearchServiceImpl.class
+com\atguigu\dao\SearchMapper.class
+com\atguigu\ShopSearchApplication.class
+com\atguigu\controller\SearchController.class

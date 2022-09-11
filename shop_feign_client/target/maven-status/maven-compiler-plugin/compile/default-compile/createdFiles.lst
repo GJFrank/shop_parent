@@ -1,0 +1,6 @@
+com\atguigu\client\CartFeignClient.class
+com\atguigu\client\SeckillFeignClient.class
+com\atguigu\client\SearchFeignClient.class
+com\atguigu\client\ProductFeignClient.class
+com\atguigu\client\UserFeignClient.class
+com\atguigu\client\OrderFeignClient.class
