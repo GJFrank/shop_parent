@@ -138,8 +138,9 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
 
     @Override
     public String splitOrder(Long orderId, String wareHouseIdSkuIdMapJson) {
-        //1. 获取原始订单
+        //1. 获取原始订单popopo
         OrderInfo parentOrderInfo = getOrderInfo(orderId);
+        OrderInfo parentOrderInfo1 = getOrderInfo(orderId);
         //参数格式转换为list  [{"wareHouseId":"1","skuIdList":["24","28"]},{"wareHouseId":"2","skuIdList":["25,30,32"]}]
         List<Map> wareHouseIdSkuIdMapList = JSON.parseArray(wareHouseIdSkuIdMapJson, Map.class);
         //多个拼接好的仓库信息
