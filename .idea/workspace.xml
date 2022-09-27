@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b512aef4-f44e-4165-92c7-9189747dd0c0" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution>
@@ -56,8 +58,15 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="2CCISNkUUHwZ3ftYhUHUQyBpf9s" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
@@ -65,10 +74,13 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../study" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
@@ -96,16 +108,6 @@
       <set>
         <option value="SpringBootApplicationConfigurationType" />
       </set>
-    </option>
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.WebApplication">
@@ -201,17 +203,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <option name="contentProportion" value="0.16720779" />
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -270,6 +261,7 @@
       <workItem from="1662368400864" duration="3786000" />
       <workItem from="1662861708870" duration="2477000" />
       <workItem from="1663545039700" duration="37000" />
+      <workItem from="1664256917107" duration="330000" />
     </task>
     <task id="LOCAL-00001" summary="第三次">
       <created>1662861866155</created>
@@ -292,28 +284,57 @@
       <option name="project" value="LOCAL" />
       <updated>1662862947348</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="第三次">
+      <created>1664257107483</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664257107483</updated>
+    </task>
+    <task id="LOCAL-00005" summary="第三次">
+      <created>1664257174632</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664257174632</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="第三次" />
     <option name="LAST_COMMIT_MESSAGE" value="第三次" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="589" y="115" key="CommitChangelistDialog2" timestamp="1664257173732">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="589" y="115" key="CommitChangelistDialog2/0.0.1920.1040/-348.1080.2560.1400@0.0.1920.1040" timestamp="1664257173732" />
+    <state x="949" y="446" key="Github.ShareDialog" timestamp="1664257006152">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="949" y="446" key="Github.ShareDialog/0.0.1920.1040/-348.1080.2560.1400@0.0.1920.1040" timestamp="1664257006152" />
+    <state x="678" y="281" key="Vcs.Push.Dialog.v2" timestamp="1664257184457">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="678" y="281" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-348.1080.2560.1400@0.0.1920.1040" timestamp="1664257184457" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
