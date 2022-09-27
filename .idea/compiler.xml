@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shop_feign_client" />
+        <module name="ware-manage" />
+        <module name="shop_common_utils" />
+        <module name="shop_web_utils" />
+        <module name="shop_order" />
+        <module name="shop_payment" />
+        <module name="shop_gateway" />
+        <module name="shop_product" />
+        <module name="shop_core_utils" />
+        <module name="shop_web" />
+        <module name="shop_seckill" />
+        <module name="shop_search" />
+        <module name="shop_mbg" />
+        <module name="shop_model" />
+        <module name="shop_user" />
+        <module name="shop_cart" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service_mq" target="1.8" />
+      <module name="service_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="service_mq" options="-parameters" />
+      <module name="service_test" options="-parameters" />
+      <module name="shop_cart" options="-parameters" />
+      <module name="shop_common_utils" options="-parameters" />
+      <module name="shop_core_utils" options="-parameters" />
+      <module name="shop_feign_client" options="-parameters" />
+      <module name="shop_gateway" options="-parameters" />
+      <module name="shop_mbg" options="-parameters" />
+      <module name="shop_model" options="-parameters" />
+      <module name="shop_order" options="-parameters" />
+      <module name="shop_payment" options="-parameters" />
+      <module name="shop_product" options="-parameters" />
+      <module name="shop_search" options="-parameters" />
+      <module name="shop_seckill" options="-parameters" />
+      <module name="shop_user" options="-parameters" />
+      <module name="shop_utils" options="-parameters" />
+      <module name="shop_web" options="-parameters" />
+      <module name="shop_web_utils" options="-parameters" />
+      <module name="ware-manage" options="-parameters" />
+    </option>
+  </component>
+</project>
